@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { JoshepAlvarez } from "../Ui/JoshepAlvarez";
 
 interface Props {
     isScrolled: boolean
@@ -16,18 +17,19 @@ export const Navbar = ({ isScrolled }: Props) => {
     return (
         <>
             <header
-                className={`fixed top-0 left-0 w-full transition-all duration-300 z-50 bg-white shadow-sm ${isScrolled ? 'h-16' : 'h-0'
-                    } overflow-hidden`}
+                className={`fixed top-0 left-0 w-full transition-all duration-300 z-50 bg-white shadow-sm ${isScrolled ? 'h-16' : 'h-0'}
+                overflow-hidden`}
             >
                 <div className="flex items-center justify-between h-full px-6">
-                    <h1 className="text-xl font-semibold">Joshep Álvarez</h1>
+                    <JoshepAlvarez size='text-xl' textColor='text-black' shadowColor="black"/>
+
 
 
 
                     {/* Mobile Menu Button (hamburguesa) */}
                     <button
                         onClick={toggleMobileMenu}
-                        className="md:hidden text-sm font-medium px-4 py-2 border border-gray-300 rounded hover:bg-gray-100 transition"
+                        className="md:hidden text-sm text-black font-medium px-4 py-2 border border-gray-300 rounded hover:bg-gray-100 transition"
                     >
                         {isMobileMenuOpen ? 'Cerrar' : 'Menú'}
                     </button>
@@ -38,12 +40,12 @@ export const Navbar = ({ isScrolled }: Props) => {
                             }`}
                     >
                         <Link href="/aboutme/">
-                            <span className="px-4 py-2 hover:bg-gray-100 rounded cursor-pointer">
+                            <span className="px-4 py-2 hover:bg-gray-100 text-black rounded cursor-pointer">
                                 Sobre Mi
                             </span>
                         </Link>
                         <Link href="/contact/">
-                            <span className="px-4 py-2 hover:bg-gray-100 rounded cursor-pointer">
+                            <span className="px-4 py-2 hover:bg-gray-100 text-black rounded cursor-pointer">
                                 Contacto
                             </span>
                         </Link>
@@ -51,7 +53,7 @@ export const Navbar = ({ isScrolled }: Props) => {
                     {/* Desktop Toggle Button (hidden in mobile) */}
                     <button
                         onClick={toggleDesktopMenu}
-                        className="hidden md:inline-block text-sm font-medium px-4 py-2 border border-gray-300 rounded hover:bg-gray-100 transition"
+                        className="hidden md:inline-block text-sm text-black font-medium px-4 py-2 border border-gray-300 rounded hover:bg-gray-100 transition"
                     >
                         {open ? 'x' : 'Mostrar'}
                     </button>
@@ -60,7 +62,7 @@ export const Navbar = ({ isScrolled }: Props) => {
 
             {/* Mobile Dropdown Menu */}
             {isMobileMenuOpen && isScrolled && (
-                <nav className="md:hidden fixed top-16 left-0 w-full bg-white border-t border-b z-40">
+                <nav className="md:hidden fixed top-16 left-0 w-full bg-white text-black border-t border-b z-40">
                     <ul className="flex flex-col px-6 py-4 shadow-md">
                         <li>
                             <Link href="/aboutme/">

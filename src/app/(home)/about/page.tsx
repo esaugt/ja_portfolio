@@ -1,12 +1,9 @@
 "use client";
-import { ReactLenis, useLenis } from 'lenis/react'
+import { ReactLenis } from 'lenis/react'
 
 
 export default function page() {
 
-    const lenis = useLenis((lenis) => {
-        console.log(lenis)
-    })
 
     return (
         <div>

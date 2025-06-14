@@ -8,9 +8,9 @@ const config: Config = {
   ],
   theme: {
     screens: {
-      lg: "992px",
-      md: "768px",
       sm: "480px",
+      md: "768px",
+      lg: "992px",
       xl: "1200px",
       xxl: "1400px",
       xxxl: "1800px",
@@ -26,6 +26,8 @@ const config: Config = {
     fontFamily: {
       inter: ["Inter", "sans-serif"],
       Montserrat: ["Montserrat", "sans-serif"],
+      poiret: ['"Poiret One"', 'cursive'],
+      inria: ['"Inria Serif"', 'serif'],
     },
     fontSize: {
       defaultsize: "0.813rem",
@@ -51,6 +53,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 };
 export default config;
