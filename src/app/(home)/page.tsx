@@ -1,25 +1,11 @@
-'use client';
 
-import { Navbar } from '@/components/Navbar/Navbar';
 import { JoshepAlvarez } from '@/components/Ui/JoshepAlvarez';
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
 
 export default function Home() {
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
 
   return (
     <>
-      <Navbar isScrolled={isScrolled} />
 
 
       {/* Primera sección: Nombre centrado */}
@@ -28,9 +14,9 @@ export default function Home() {
 
       <section className="relative h-screen flex items-center justify-center">
         <Image src={'/pictures/joshep_2.png'} alt='Fondo de Landing joshep ALvarez' layout='fill' objectFit='cover' className='z-0' />
-        <div className='z-10'>
+        <div className='z-10 m-2'>
 
-          <JoshepAlvarez size='text-6xl' textColor='text-white' />
+          <JoshepAlvarez size='text-5xl' textColor='text-white' />
         </div>
       </section>
 
