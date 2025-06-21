@@ -5,14 +5,14 @@ import Image from 'next/image';
 import { useEffect } from 'react';
 
 
-export default function page() {
+export default function About() {
 
     const { setForceScrolled } = useLayoutContext()
 
     useEffect(() => {
         setForceScrolled(true)
     }, [setForceScrolled])
-    
+
     return (
         <div className='h-full'>
             <ReactLenis root />
@@ -36,7 +36,7 @@ export default function page() {
             <section className='w-2xl'>
                 <div className="py-16 bg-white">
                     <div className="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
-                     
+
 
                     </div>
                 </div>

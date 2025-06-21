@@ -23,9 +23,9 @@ export default function Home() {
 
 
       {/* Sección de contenido extra */}
-      <section className="relative h-screen bg-gray-100 p-8">
+      <section className="relative min-h-[100dvh] bg-gray-100 p-8">
 
-        <div className="carousel sm:w-full lg:w-1/2 aspect-[3/4]">
+        <div className="carousel sm:w-1/2 w-full aspect-[3/4] sm:aspect-[3/4] relative">
           <div id="slide1" className="carousel-item relative w-full">
             <Image alt="Joshep Carrusel 1" src="/pictures/joshep_1.png"
               className="object-cover" fill />
