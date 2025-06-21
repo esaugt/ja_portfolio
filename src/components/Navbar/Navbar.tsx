@@ -52,7 +52,12 @@ export const Navbar = ({ isScrolled }: Props) => {
                         >
                             <Link href="/about/">
                                 <span className="px-4 py-2 hover:bg-gray-100 text-base rounded cursor-pointer">
-                                    Sobre Mi
+                                    Conóceme
+                                </span>
+                            </Link>
+                            <Link href="/gallery/">
+                                <span className="px-4 py-2 hover:bg-gray-100 text-base rounded cursor-pointer">
+                                    Galería
                                 </span>
                             </Link>
                             <Link href="/contact/">
@@ -119,6 +124,13 @@ export const Navbar = ({ isScrolled }: Props) => {
                         <Link href="/about/">
                             <span className="block px-4 py-2 hover:bg-gray-100 rounded cursor-pointer">
                                 Sobre Mi
+                            </span>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/gallery/">
+                            <span className="block px-4 py-2 hover:bg-gray-100 rounded cursor-pointer">
+                                Galería
                             </span>
                         </Link>
                     </li>
