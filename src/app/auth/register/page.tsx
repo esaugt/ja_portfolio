@@ -1,63 +1,87 @@
 'use client';
 
 import { useLayoutAdminContext } from "@/app/contexts/admin/AdminContext";
-import { JoshepAlvarez } from "@/components/Ui/JoshepAlvarez";
 import Link from "next/link";
-import { redirect } from "next/navigation";
+import { useState } from "react";
 
-export default function SignIn() {
+export default function SignUp() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPass, setConfirmPass] = useState('');
+  const [error, setError] = useState('');
+  
+  const {isLoged}= useLayoutAdminContext()
+  
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
 
-  const { isLoged } = useLayoutAdminContext()
+    if (password !== confirmPass) {
+      setError('Las contraseñas no coinciden');
+      return;
+    }
 
-  if (isLoged != false) (
-    redirect('/')
-  )
+    setError('');
+    // Aquí iría tu lógica de envío al backend
+    console.log("Formulario enviado:", { email, password });
+  };
 
   return (
     <section className="m-8 flex gap-4 justify-center items-center">
-
       <div className="w-1/2 mt-24">
-
-        <div className="text-center">
-          <JoshepAlvarez size="text-[64px]" />
+        <div className="text-center mb-8">
+          <h1 className="text-[64px] font-bold text-black">Únete</h1>
+          <p className="text-lg text-gray-800">Ingresa tu correo y contraseña</p>
         </div>
 
-        <form className="mt-8 mb-2 mx-auto w-80 max-w-screen-lg lg:w-1/2 text-base font-bold">
+        <form onSubmit={handleSubmit} className="mx-auto w-80 max-w-screen-lg lg:w-1/2 text-base font-bold">
           <div className="mb-1 flex flex-col gap-6">
             <label htmlFor="email">Correo:</label>
             <input
               id="email"
               type="email"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
               placeholder="name@mail.com"
+              required
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-gray-900 text-white"
             />
 
-            <label htmlFor="password">Contraseña</label>
+            <label htmlFor="password">Contraseña:</label>
             <input
               id="password"
+              type="password"
+              value={password}
+              onChange={e => setPassword(e.target.value)}
+              required
+              placeholder="********"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-gray-900 text-white"
+            />
+            <label htmlFor="confirmPassword">Confirmar Contraseña:</label>
+            <input
+              id="confirmPassword"
+              value={confirmPass}
+              onChange={e => setConfirmPass(e.target.value)}
               type="password"
               placeholder="********"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-gray-900 text-white"
             />
+
+            {error && (
+              <p className="text-red-500 text-sm font-normal -mt-4">{error}</p>
+            )}
           </div>
 
           <button
             type="submit"
             className="mt-6 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
           >
-            Iniciar Sesión
+            Registrar Ahora
           </button>
-
-          <div className="flex items-center justify-between gap-2 mt-6">
-            <span className="font-medium text-gray-900">
-              <a href="#" className="hover:underline">Recuperar Contraseña</a>
-            </span>
-          </div>
 
           {/* <div className="space-y-4 mt-8">
             <button
               type="button"
-              className="w-full flex items-center justify-center gap-2 border border-gray-300 py-2 rounded-lg shadow-md hover:bg-gray-100 transition"
+              className="w-full flex items-center justify-center gap-2 border border-gray-300 py-2 rounded-lg shadow-md hover:bg-gray-100 transition text-black"
             >
               <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clipPath="url(#clip0_1156_824)">
@@ -72,14 +96,14 @@ export default function SignIn() {
                   </clipPath>
                 </defs>
               </svg>
-              <span>Iniciar con Google</span>
+              <span>Regístrate con Google</span>
             </button>
           </div> */}
 
           <div className="text-center text-gray-600 font-medium mt-4">
-            ¿No tienes cuenta?
-            <Link href="/auth/sign-up" className="text-gray-900 ml-1 hover:underline">
-              Crear Cuenta
+            ¿Ya tienes cuenta?
+            <Link href="/auth/login" className="text-gray-900 ml-1 hover:underline">
+              Iniciar Sesión
             </Link>
           </div>
         </form>

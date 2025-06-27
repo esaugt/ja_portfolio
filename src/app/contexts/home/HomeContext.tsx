@@ -8,15 +8,15 @@ type LayoutContextType = {
   setForceScrolled: (value: boolean) => void
 }
 
-const LayoutContext = createContext<LayoutContextType | undefined>(undefined)
+const LayoutHomeContext = createContext<LayoutContextType | undefined>(undefined)
 
 export const useLayoutContext = () => {
-  const ctx = useContext(LayoutContext)
+  const ctx = useContext(LayoutHomeContext)
   if (!ctx) throw new Error('useLayoutContext must be used inside LayoutProvider')
   return ctx
 }
 
-export const LayoutProvider = ({ children }: { children: ReactNode }) => {
+export const LayoutHomeProvider = ({ children }: { children: ReactNode }) => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [forceScrolled, setForceScrolled] = useState(false)
 
@@ -32,8 +32,13 @@ export const LayoutProvider = ({ children }: { children: ReactNode }) => {
   }, [forceScrolled])
 
   return (
-    <LayoutContext.Provider value={{ isScrolled, setForceScrolled }}>
+    <LayoutHomeContext.Provider value={{
+      isScrolled,
+      setForceScrolled
+    }}>
+
       {children}
-    </LayoutContext.Provider>
+      
+    </LayoutHomeContext.Provider>
   )
 }
