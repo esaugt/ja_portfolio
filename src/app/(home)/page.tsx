@@ -1,4 +1,4 @@
-
+// Home es todo lo que comprende al landing page y sus secciones
 import { JoshepAlvarez } from '@/components/Ui/JoshepAlvarez';
 import Image from 'next/image';
 
@@ -9,8 +9,6 @@ export default function Home() {
 
 
       {/* Primera sección: Nombre centrado */}
-
-
 
       <section className="relative h-screen flex items-center justify-center">
         <Image src={'/pictures/joshep_2.png'} alt='Fondo de Landing joshep ALvarez' layout='fill' objectFit='cover' className='z-0' />

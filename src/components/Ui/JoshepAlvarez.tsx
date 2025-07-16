@@ -17,11 +17,12 @@ export const JoshepAlvarez = ({
 
 }: Props) => {
 
-    const layoutClass = breakOnMobile ? 'flex flex-col md:flex-row items-center justify-center ': ''
+    const layoutClass = breakOnMobile ? 'flex flex-col md:flex-row items-center justify-center ' : ''
 
     return (
         <div className={`isolate relative ${poiret.variable} ${inria.variable}`}>
-            <div className={`${layoutClass} ${fontType} ${size} ${textColor}`} style={{ filter: `drop-shadow(0 0 8px ${shadowColor})` }}>
+            <div className={`${layoutClass} ${fontType} ${size} ${textColor} whitespace-nowrap`}
+                style={{ filter: `drop-shadow(0 0 8px ${shadowColor})` }}>
                 <span className="font-poiret mx-2">
                     Joshep
                 </span>

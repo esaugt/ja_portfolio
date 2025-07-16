@@ -1,7 +1,8 @@
 'use client';
 
 import { useEffect } from "react";
-import { useLayoutContext } from "../../contexts/home/HomeContext";
+import { useLayoutContext } from "../../../context/home/HomeContext";
+import { useAppContext } from "@/context/app_context/AppContext";
 
 export default function ContacPage() {
     const { setForceScrolled } = useLayoutContext()
@@ -10,6 +11,8 @@ export default function ContacPage() {
         setForceScrolled(true)
     }, [setForceScrolled])
 
+    const {isLoggedIn}=useAppContext()
+    console.log("Está Logeado:",isLoggedIn)
     return (
         <>
             <div className="flex mt-32 justify-start">

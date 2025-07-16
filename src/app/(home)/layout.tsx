@@ -2,7 +2,7 @@
 import { Footer } from "@/components/Footer/Footer";
 import { Navbar } from "@/components/Navbar/Navbar";
 import { ReactElement, ReactNode } from "react";
-import { LayoutHomeProvider, useLayoutContext } from "../contexts/home/HomeContext";
+import { LayoutHomeProvider, useLayoutContext } from "../../context/home/HomeContext";
 
 type Props = {
     children: ReactElement

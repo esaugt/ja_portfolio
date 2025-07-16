@@ -11,7 +11,7 @@ export default async function DashboardPage() {
   // }
   return (
     <div className="grip gap-6 grid-cols-3 md:grid-cols-2 ">
-
+Hola
       {/* <WidgetItem title='Usuario Autenticado'>
         <div className="flex flex-col">
           <span>{session.user?.name}</span>

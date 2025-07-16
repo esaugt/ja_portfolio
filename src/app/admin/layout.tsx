@@ -1,5 +1,5 @@
 import { ReactElement, ReactNode } from "react";
-import { LayoutAdminProvider } from "../contexts/admin/AdminContext";
+import { LayoutAdminProvider } from "../../context/admin/AdminContext";
 
 type Props = {
     children: ReactElement
@@ -7,7 +7,7 @@ type Props = {
 
 
 
-export default function AuthLayout({ children }: Props) {
+export default function AdminLayout({ children }: Props) {
     return (
         <LayoutAdminProvider>
             <LayoutContent>{children}</LayoutContent>

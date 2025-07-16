@@ -1,5 +1,5 @@
 "use client";
-import { useLayoutContext } from '@/app/contexts/home/HomeContext';
+import { useLayoutContext } from '@/context/home/HomeContext';
 import { ReactLenis } from 'lenis/react'
 import Image from 'next/image';
 import { useEffect } from 'react';

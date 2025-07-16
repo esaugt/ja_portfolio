@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect } from "react";
-import { useLayoutContext } from "../../contexts/home/HomeContext";
+import { useLayoutContext } from "../../../context/home/HomeContext";
 
 export default function ContacPage() {
     const { setForceScrolled } = useLayoutContext()

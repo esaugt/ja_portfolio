@@ -1,5 +1,5 @@
 "use client";
-import { useLayoutContext } from '@/app/contexts/home/HomeContext';
+import { useLayoutContext } from '@/context/home/HomeContext';
 import { JoshepAlvarez } from '@/components/Ui/JoshepAlvarez';
 import Link from 'next/link';
 import { useEffect } from 'react';
